@@ -3,7 +3,7 @@ name: Daily Sign
 on:
   push:
   schedule:
-    - cron: '2 15 * * *'
+    - cron: '17 18 * * *'
   
 
 jobs:
