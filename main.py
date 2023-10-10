@@ -39,12 +39,14 @@ class Bot:
         self.api_url = f'https://api.telegram.org/bot{self.token}'
 
     def sendMessage(self, text: str):
-        r = requests.post(self.api_url + '/sendMessage',
-                          json={
-                              'chat_id': self.chat_id,
-                              'text': text,
-                              'parse_mode': 'html'
-                          })
+        sou=f"{self.api_url}/sendMessage?chat_id={self.chat_id}&text={text}"
+        # r = requests.post(self.api_url + '/sendMessage',
+        #                   json={
+        #                       'chat_id': self.chat_id,
+        #                       'text': text,
+        #                       'parse_mode': 'html'
+        #                   })
+        r=requests.get(sou)
         if r.status_code != 200:
             logger.warning(f'Telegram 訊息發送錯誤 {r.status_code}')
             logger.warning(r,text)
