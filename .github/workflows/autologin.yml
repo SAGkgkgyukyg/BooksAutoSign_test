@@ -3,8 +3,8 @@ name: Daily Sign
 on:
   push:
   schedule:
-    - cron: '17 18 * * *'
-  
+    - cron: '21 18 * * *'
+  workflow_dispatch:
 
 jobs:
   build:
